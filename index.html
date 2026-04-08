@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cookies & Privacidade</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(120deg,#eef2ff,#e0f2fe);
+display:flex;
+align-items:center;
+justify-content:center;
+height:100vh;
+}
+
+/* CARD PRINCIPAL */
+.cookie-box{
+width:95%;
+max-width:900px;
+background:#ffffff;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* HEADER */
+.header{
+background:linear-gradient(135deg,#2563eb,#1e3a8a);
+padding:25px;
+color:#fff;
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.icon{
+width:50px;
+height:50px;
+border-radius:12px;
+background:rgba(255,255,255,0.2);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+}
+
+/* CONTENT */
+.content{
+padding:25px;
+}
+
+.text{
+font-size:14px;
+color:#334155;
+margin-bottom:20px;
+}
+
+/* CARDS */
+.cards{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+margin-bottom:25px;
+}
+
+.card{
+flex:1;
+min-width:240px;
+padding:18px;
+border-radius:12px;
+border:1px solid #e2e8f0;
+}
+
+.card h3{
+font-size:15px;
+margin-bottom:5px;
+}
+
+.card p{
+font-size:13px;
+color:#64748b;
+}
+
+.necessary{
+background:#ecfeff;
+border-color:#67e8f9;
+}
+
+.optional{
+background:#f0fdf4;
+border-color:#86efac;
+}
+
+/* BOTÕES */
+.buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+flex:1;
+padding:15px;
+border:none;
+border-radius:12px;
+font-weight:600;
+cursor:pointer;
+font-size:14px;
+transition:.2s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+/* BOTÃO PRINCIPAL */
+.accept{
+background:#22c55e;
+color:#fff;
+box-shadow:0 10px 25px rgba(34,197,94,0.3);
+}
+
+/* SECUNDÁRIOS */
+.reject{
+background:#e2e8f0;
+color:#0f172a;
+}
+
+.custom{
+background:#ffffff;
+border:2px solid #2563eb;
+color:#2563eb;
+}
+
+/* FOOTER */
+.footer{
+text-align:center;
+font-size:12px;
+margin-top:15px;
+color:#64748b;
+}
+
+.footer a{
+color:#2563eb;
+text-decoration:none;
+font-weight:500;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="cookie-box">
+
+<div class="header">
+<div class="icon">🍪</div>
+<div>
+<h1>Cookies & Privacidade</h1>
+<p>Respeitamos sua experiência e segurança</p>
+</div>
+</div>
+
+<div class="content">
+
+<div class="text">
+Utilizamos cookies para melhorar sua navegação, analisar o uso do site e oferecer conteúdos relevantes.
+</div>
+
+<div class="cards">
+
+<div class="card necessary">
+<h3>🛡 Essenciais</h3>
+<p>Necessários para funcionamento correto do site</p>
+</div>
+
+<div class="card optional">
+<h3>📊 Opcionais</h3>
+<p>Usados para análise, marketing e melhorias</p>
+</div>
+
+</div>
+
+<div class="buttons">
+<button class="btn accept" onclick="aceitar()">Aceitar Todos</button>
+<button class="btn reject" onclick="rejeitar()">Rejeitar</button>
+<button class="btn custom" onclick="personalizar()">Personalizar</button>
+</div>
+
+<div class="footer">
+Saiba mais em nossa <a href="privacidade.html">Política de Privacidade</a>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* LINKS */
+const LINK_ACEITAR = "https://brasilnomes.netlify.app/"
+const LINK_REJEITAR = "https://brasilnomes.netlify.app/"
+const LINK_PERSONALIZAR = "https://brasilnomes.netlify.app/"
+
+function aceitar(){
+localStorage.setItem("cookies","accepted")
+window.location.href = LINK_ACEITAR
+}
+
+function rejeitar(){
+localStorage.setItem("cookies","rejected")
+window.location.href = LINK_REJEITAR
+}
+
+function personalizar(){
+localStorage.setItem("cookies","custom")
+window.location.href = LINK_PERSONALIZAR
+}
+
+</script>
+
+</body>
+</html>
